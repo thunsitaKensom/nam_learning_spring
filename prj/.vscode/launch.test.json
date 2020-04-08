@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "WeMuBPMN",
+                "projectName": "WeMuBPMN",
+                "workingDirectory": "d:\\BPMN\\99Web\\WeMuBPMN",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "WeMuBPMN",
+                "projectName": "WeMuBPMN",
+                "workingDirectory": "d:\\BPMN\\99Web\\WeMuBPMN",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}

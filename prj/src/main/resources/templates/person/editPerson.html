@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <title>Spring Boot Example</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css"
+        media="screen" />
+    <script th:src="@{/js/bootstrap.min.js}" src="../../js/bootstrap.min.js"></script>
+    <th:block th:include="fragments/header :: header"></th:block>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Person Details</h2>
+        <div>
+            <form class="form-horizontal" th:object="${person}" th:action="@{/person}" method="post">
+                <input type="hidden" th:field="*{id}" />
+                <!-- <input type="hidden" th:field="*{version}"/> -->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Firstname:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{Firstname}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Lastname:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{Lastname}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">BirthDate:</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control"  th:field="*{BirthDate}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Address:</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" th:field="*{Address}"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Zipcode:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{Zipcode}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Email:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" th:field="*{Email}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Phone:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" th:field="*{Phone}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
