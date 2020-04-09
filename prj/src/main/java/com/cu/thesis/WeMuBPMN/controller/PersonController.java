@@ -61,7 +61,9 @@ public class PersonController
 
     @RequestMapping(value = "/")
     public String home(Model model) {
-        model.addAttribute("person", personService.getPersonById(10));
+        Person person = personService.getPersonById(10);
+        model.addAttribute("person", person);
+        model.addAttribute("title", person.getFullname()+"!");
         return "home/index";
     }
 
