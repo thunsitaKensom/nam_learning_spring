@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <title>Spring Boot Example</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" href="../../static/css/bootstrap.min.css"
+        media="screen" />
+    <script th:src="@{/js/bootstrap.min.js}" src="../../js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div th:replace="fragments/project_header"> </div>
+    <div class="container">
+        <div th:if="${not #lists.isEmpty(projects)}">
+            <h2>Project List</h2>
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Project Name</th>
+                    <th>Project Description</th>
+                    <th>Project Created</th>
+
+                    <th>View</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr th:each="project : ${projects}">
+                    <td th:text="${project.id}"><a href="/project/${project.id}">Id</a></td>
+                    <td th:text="${project.Proj_name}">Product Id</td>
+                    <td th:text="${project.Proj_desc}">descirption</td>
+                    <td th:text="${project.Proj_date}">descirption</td>
+                    <td><a th:href="${ '/project/' + project.id}">View</a></td>
+                    <td><a th:href="${'/project/edit/' + project.id}">Edit</a></td>
+                    <td><a th:href="${'/project/delete/' + project.id}">Delete</a></td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>
